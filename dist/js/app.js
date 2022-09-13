@@ -419,10 +419,6 @@ $(function () {
 			`
 		},
 
-
-
-
-
 		"sentence-answer": {
 			"name": "Менеджер «Билет в отпуск»",
 			"class": 'manager',
@@ -459,17 +455,17 @@ $(function () {
 			"text": `Отлично, тогда ...`,
 			"boxBtn": `
 			<div class="manager-choice">
-				<button class="manager-btn" data-dialog='interes-2' data-choice='no' >
+				<button class="manager-btn" data-dialog='excursion' data-choice='no' >
 					<span class="manager-btn-text">
 						давайте оформим документы
 					</span>
 				</button>
-				<button class="manager-btn" data-dialog='interes-2' data-choice='no' >
+				<button class="manager-btn" data-dialog='excursion' data-choice='no' >
 				<span class="manager-btn-text">
 					останавливаемся на этом варианте, до свидания!
 				</span>
 				</button>
-				<button class="manager-btn" data-dialog='interes-2' data-choice='no' >
+				<button class="manager-btn" data-number='3' data-dialog='excursion' data-choice='excursion' >
 					<span class="manager-btn-text">
 						может ещё дополнительно посмотрим экскурсии?
 					</span>
@@ -478,7 +474,160 @@ $(function () {
 			`
 		},
 
+		"excursion-answer": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			 `,
+			"text": `Мы также предлагаем различные экскурсии. Хотите посмотреть?`,
+		},
+		"excursion": {
+			"name": "Клиент Анна",
+			"text": `А какие есть варианты? Нам важно уложиться в нашу общую стоимость 80 000₽.`,
+			"class": 'client'
+		},
+		"excursion-answer-1": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			<button class="manger-head-btn">
+							?
+						</button>`,
+			"text": `Уверена, я смогу подобрать интересные варианты для вас.`,
+			"boxBtn": `
+			<div class="manager-choice">
+                <button class="manager-btn-popup" data-open='excursion' >
+                    <span class="manager-btn-text">
+                    Перейти к экскурсиям
+                    </span>
+                </button>
 
+
+			</div>
+			`
+		},
+
+		"equipment-answer": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			 `,
+			"text": `Хочу вам предложить поход по Алтайским горам с профессиональным гидом на два дня. Вы увидите и горы, и ущелья, и горные озёра. Природа там очень красивая.`,
+		},
+		"equipment": {
+			"name": "Клиент Анна",
+			"text": `Отлично, как раз то, что мы хотим.`,
+			"class": 'client'
+		},
+		"equipment-answer-two": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			<button class="manger-head-btn">
+							?
+						</button>`,
+			"text": `Хорошо, тогда бронирую. `,
+			"boxBtn": `
+			<div class="manager-choice">
+				<button class="manager-btn" data-number='4' data-dialog='insurance' data-choice='insurance' >
+					<span class="manager-btn-text">
+						Будет ли у вас с собой снаряжение для горных походов – палатка, рюкзаки, спальные мешки?
+					</span>
+				</button>
+			</div>
+			`
+		},
+
+
+
+		"insurance": {
+			"name": "Клиент Анна",
+			"text": `Ох, у нас нет снаряжения, можно будет получить на месте?`,
+			"class": 'client'
+		},
+		"insurance-answer": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			<button class="manger-head-btn">
+							?
+						</button>`,
+			"text": `Да, мы всё организуем.`,
+		},
+		"insurance-two": {
+			"name": "Клиент Анна",
+			"text": `Спасибо!`,
+			"class": 'client'
+		},
+		"insurance-answer-two": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			<button class="manger-head-btn">
+							?
+						</button>`,
+			"text": `Ну что, ...`,
+			"boxBtn": `
+			<div class="manager-choice">
+				<button class="manager-btn" data-number='3' data-dialog='insurance' data-choice='no' >
+					<span class="manager-btn-text">
+					тогда давайте оформлять документы
+					</span>
+				</button>
+				<button class="manager-btn" data-number='3' data-dialog='insuranceСhoice' data-choice='insuranceСhoice' >
+					<span class="manager-btn-text">
+					для таких экскурсий было бы неплохо сделать страховку
+					</span>
+				</button>
+				<button class="manager-btn" data-number='3' data-dialog='insurance' data-choice='no' >
+					<span class="manager-btn-text">
+					на этом всё. До свидания!
+					</span>
+				</button>
+			</div>
+			`
+		},
+
+		"insuranceСhoice-answer": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			 `,
+			"text": `Смотрите, я рекомендую вам оформить страховку для компенсации непредвиденных расходов. Например, из-за непогоды может задержаться обратный рейс. Более того, вы планируете поход по горам – это активный отдых, лучше подстраховаться от несчастных случаев.`,
+		},
+		"insuranceСhoice": {
+			"name": "Клиент Анна",
+			"text": `Да, спасибо, что предложили. `,
+			"class": 'client'
+		},
+		"insuranceСhoice-answer-1": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			<button class="manger-head-btn">
+							?
+						</button>`,
+			"text": `Давайте выберем нужный вариант`,
+			"boxBtn": `
+			<div class="manager-choice">
+                <button class="manager-btn-popup" data-open='insurance' >
+                    <span class="manager-btn-text">
+                    Перейти к страховкам
+                    </span>
+                </button>
+
+
+			</div>
+			`
+		},
 	}
 
 	// start
@@ -631,6 +780,46 @@ $(function () {
 		})
 	}
 	tourClose()
+
+	// закрытие модального окна excursion
+	function excursionClose() {
+		let btn = document.querySelectorAll('.excursion-btn');
+		let chat = document.querySelector('.main-chat');
+		btn.forEach(item => {
+			item.addEventListener('click', () => {
+				let dataArr = item.getAttribute('data-dialog');
+				let dataChoice = item.getAttribute('data-choice');
+				if (dataArr != dataChoice) {
+					item.classList.add('--no-active')
+				} else if (dataChoice == dataArr) {
+					item.classList.add('active')
+					setTimeout(() => {
+						let back = document.querySelector('.excursion-back');
+						back.classList.remove('--active');
+						chat.innerHTML = '';
+					}, 2000)
+					setTimeout(() => {
+						dialog(startList[`${dataArr}-answer`]['name'], startList[`${dataArr}-answer`]['text'], startList[`${dataArr}-answer`]['class'], startList[`${dataArr}-answer`]['classTwo'], startList[`${dataArr}-answer`]['headBtn'], startList[`${dataArr}-answer`]['boxBtn'])
+						diologRadios()
+						madalOpen()
+					}, 3000)
+					setTimeout(() => {
+						dialog(startList[dataArr]['name'], startList[dataArr]['text'], startList[dataArr]['class'])
+						diologRadios()
+						madalOpen()
+					}, 4000)
+					setTimeout(() => {
+						dialog(startList[`${dataArr}-answer-two`]['name'], startList[`${dataArr}-answer-two`]['text'], startList[`${dataArr}-answer-two`]['class'], startList[`${dataArr}-answer-two`]['classTwo'], startList[`${dataArr}-answer-two`]['headBtn'], startList[`${dataArr}-answer-two`]['boxBtn'])
+						diologRadios()
+						choiceOfAnswer('cleaning')
+						madalOpen()
+					}, 5000)
+
+				}
+			})
+		})
+	}
+	excursionClose()
 	// добовление удаление скруглениий окна диалогов
 	function diologRadios() {
 		let chat = document.querySelector('.main-chat');
