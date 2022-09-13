@@ -623,8 +623,106 @@ $(function () {
                     Перейти к страховкам
                     </span>
                 </button>
+			</div>
+			`
+		},
 
 
+
+		"extendedInsurance-answer": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			 `,
+			"text": `Я предлагаю вам расширенную страховку, в которую дополнительно входит страхование от несчастных случаев на активном отдыхе.`,
+		},
+		"extendedInsurance": {
+			"name": "Клиент Анна",
+			"text": `Хорошо.`,
+			"class": 'client'
+		},
+		"extendedInsurance-answer-two": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			<button class="manger-head-btn">
+							?
+						</button>`,
+			"text": `Осталось только...`,
+			"boxBtn": `
+			<div class="manager-choice">
+				<button class="manager-btn"  data-dialog='tests' data-choice='no' >
+					<span class="manager-btn-text">
+						сказать друг другу «до свидания»!
+					</span>
+				</button>
+				<button class="manager-btn"  data-dialog='tests' data-choice='tests' >
+					<span class="manager-btn-text">
+						оформить документы
+					</span>
+				</button>
+			</div>
+			`
+		},
+
+		"tests": {
+			"name": "Клиент Анна",
+			"text": `Какие нужны документы для офромления путевки?`,
+			"class": 'client'
+		},
+		"tests-answer": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			<button class="manger-head-btn">
+							?
+						</button>`,
+			"text": `Всё просто, достаточно...`,
+			"boxBtn": `
+			<div class="manager-choice">
+						<button class="manager-btn" data-dialog='pasport' data-choice='pasport'>
+							<span class="manager-btn-text">
+							ваших паспортов
+							</span>
+						</button>
+						<button class="manager-btn" data-dialog='pasport' data-choice='actions'>
+							<span class="manager-btn-text">
+							паспорта и СНИЛС
+							</span>
+						</button>
+						<button class="manager-btn" data-dialog='pasport' data-choice='actions'>
+							<span class="manager-btn-text">
+							паспорта и свидетельства о рождении
+							</span>
+						</button>
+					</div>
+			`
+		},
+
+		"pasport": {
+			"name": "Клиент Анна",
+			"text": `Вот, держите`,
+			"class": 'client'
+		},
+		"pasport-answer": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			<button class="manger-head-btn">
+							?
+						</button>`,
+			"text": `Отлично, осталось проверить, что мы всё правильно заполнили`,
+			"boxBtn": `
+			<div class="manager-choice">
+				<button class="manager-btn-popup" data-open='questionnaire' >
+					<span class="manager-btn-text">
+						Проверить данные
+					</span>
+				</button>
 			</div>
 			`
 		},
@@ -820,6 +918,46 @@ $(function () {
 		})
 	}
 	excursionClose()
+
+	// закрытие модального окна excursion
+	function insuranceClose() {
+		let btn = document.querySelectorAll('.insurance-btn');
+		let chat = document.querySelector('.main-chat');
+		btn.forEach(item => {
+			item.addEventListener('click', () => {
+				let dataArr = item.getAttribute('data-dialog');
+				let dataChoice = item.getAttribute('data-choice');
+				if (dataArr != dataChoice) {
+					item.classList.add('--no-active')
+				} else if (dataChoice == dataArr) {
+					item.classList.add('active')
+					setTimeout(() => {
+						let back = document.querySelector('.insurance-back');
+						back.classList.remove('--active');
+						chat.innerHTML = '';
+					}, 2000)
+					setTimeout(() => {
+						dialog(startList[`${dataArr}-answer`]['name'], startList[`${dataArr}-answer`]['text'], startList[`${dataArr}-answer`]['class'], startList[`${dataArr}-answer`]['classTwo'], startList[`${dataArr}-answer`]['headBtn'], startList[`${dataArr}-answer`]['boxBtn'])
+						diologRadios()
+						madalOpen()
+					}, 3000)
+					setTimeout(() => {
+						dialog(startList[dataArr]['name'], startList[dataArr]['text'], startList[dataArr]['class'])
+						diologRadios()
+						madalOpen()
+					}, 4000)
+					setTimeout(() => {
+						dialog(startList[`${dataArr}-answer-two`]['name'], startList[`${dataArr}-answer-two`]['text'], startList[`${dataArr}-answer-two`]['class'], startList[`${dataArr}-answer-two`]['classTwo'], startList[`${dataArr}-answer-two`]['headBtn'], startList[`${dataArr}-answer-two`]['boxBtn'])
+						diologRadios()
+						choiceOfAnswer('cleaning')
+						madalOpen()
+					}, 5000)
+
+				}
+			})
+		})
+	}
+	insuranceClose()
 	// добовление удаление скруглениий окна диалогов
 	function diologRadios() {
 		let chat = document.querySelector('.main-chat');
