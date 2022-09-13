@@ -726,6 +726,69 @@ $(function () {
 			</div>
 			`
 		},
+
+		"pay": {
+			"name": "Клиент Анна",
+			"text": `Отлично, наши документы в порядке.`,
+			"class": 'client'
+		},
+		"pay-answer": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			<button class="manger-head-btn">
+							?
+						</button>`,
+			"text": `Замечательно, нам осталось ...`,
+			"boxBtn": `
+			<div class="manager-choice">
+				<button class="manager-btn" data-number='3' data-dialog='goodbye' data-choice='goodbye'>
+					<span class="manager-btn-text">
+					распечатать документы и оплатить
+					</span>
+				</button>
+				<button class="manager-btn" data-number='3' data-dialog='goodbye' data-choice='actions'>
+					<span class="manager-btn-text">
+					Попрощаться
+					</span>
+				</button>
+			</div>
+			`
+		},
+
+		"goodbye-answer": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			 `,
+			"text": `Вот, держите ваши документы! За пару дней до отправления я напишу вам и напомню о вашей поездке. `,
+		},
+		"goodbye": {
+			"name": "Клиент Анна",
+			"text": `Большое спасибо!  `,
+			"class": 'client'
+		},
+		"goodbye-answer-1": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			<button class="manger-head-btn">
+							?
+						</button>`,
+			"text": `До свидания! `,
+			"boxBtn": `
+			<div class="manager-choice">
+			<button class="manager-btn" data-number='3' data-dialog='goodbye' data-choice='goodbye'>
+			<span class="manager-btn-text">
+			Желаю вам хорошего отдыха!
+			</span>
+		</button>
+			</div>
+			`
+		},
 	}
 
 	// start
@@ -958,6 +1021,38 @@ $(function () {
 		})
 	}
 	insuranceClose()
+
+	// закрытие модального окна corect
+	function corectClose() {
+		let btn = document.querySelector('.correct-btn');
+		let chat = document.querySelector('.main-chat');
+		let corect = document.querySelector('.correct-back');
+		let questionnaire = document.querySelector('.questionnaire-back ');
+
+		btn.addEventListener('click', () => {
+			let dataArr = btn.getAttribute('data-dialog');
+
+
+			setTimeout(() => {
+				corect.classList.remove('--active');
+				questionnaire.classList.remove('--active');
+				chat.innerHTML = '';
+			}, 2000)
+			setTimeout(() => {
+				dialog(startList[dataArr]['name'], startList[dataArr]['text'], startList[dataArr]['class'])
+				diologRadios()
+				madalOpen()
+			}, 3000)
+			setTimeout(() => {
+				dialog(startList[`${dataArr}-answer`]['name'], startList[`${dataArr}-answer`]['text'], startList[`${dataArr}-answer`]['class'], startList[`${dataArr}-answer`]['classTwo'], startList[`${dataArr}-answer`]['headBtn'], startList[`${dataArr}-answer`]['boxBtn'])
+				diologRadios()
+				choiceOfAnswer('cleaning')
+				madalOpen()
+			}, 4000)
+
+		})
+	}
+	corectClose()
 	// добовление удаление скруглениий окна диалогов
 	function diologRadios() {
 		let chat = document.querySelector('.main-chat');
@@ -971,7 +1066,27 @@ $(function () {
 		}
 	}
 
+	// нахождение ошибок
+	function correctSearch() {
+		let btn = document.querySelectorAll('.examinat-btn');
+		let counter = 0;
+		let correct = document.querySelector('.correct-back');
+		btn.forEach(item => {
+			item.addEventListener('click', () => {
+				if (!item.classList.contains('--active')) {
+					counter += 1;
+					item.classList.add('--active');
+				}
+				if (counter == 2) {
+					setTimeout(() => {
+						correct.classList.add('--active');
+					}, 2000)
 
+				}
+			})
+		})
+	}
+	correctSearch()
 
 	// диалог клиента
 	function dialog(name, text, classBox, classBoxTwo = 'plug', boxBtnHead = '', boxBtn = '') {
