@@ -408,7 +408,7 @@ $(function () {
 			"boxBtn": `
 			<div class="manager-choice">
 
-						<button class="manager-btn-popup"  >
+						<button class="manager-btn-popup" data-open='tour-back' >
 							<span class="manager-btn-text">
 							Перейти к бронированию
 							</span>
@@ -418,6 +418,66 @@ $(function () {
 					</div>
 			`
 		},
+
+
+
+
+
+		"sentence-answer": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": ``,
+			"text": `Могу вам предложить вот такой вариант, он полностью подходит под ваш запрос: гостиница «Сила гор Алтая», стандартный номер с видом на горы, вылеты – очень удобные по времени`,
+		},
+		"sentence": {
+			"name": "Клиент Анна",
+			"text": `Хорошо. А питание включено?`,
+			"class": 'client'
+		},
+		"sentence-answer-two": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": ``,
+			"text": `Да, в тур входит трёхразовое питание.`,
+		},
+		"sentence-two": {
+			"name": "Клиент Анна",
+			"text": `Нас всё устраивает. Давайте бронировать!`,
+			"class": 'client'
+		},
+
+		"sentence-answer-three": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			<button class="manger-head-btn">
+							?
+						</button>`,
+			"text": `Отлично, тогда ...`,
+			"boxBtn": `
+			<div class="manager-choice">
+				<button class="manager-btn" data-dialog='interes-2' data-choice='no' >
+					<span class="manager-btn-text">
+						давайте оформим документы
+					</span>
+				</button>
+				<button class="manager-btn" data-dialog='interes-2' data-choice='no' >
+				<span class="manager-btn-text">
+					останавливаемся на этом варианте, до свидания!
+				</span>
+				</button>
+				<button class="manager-btn" data-dialog='interes-2' data-choice='no' >
+					<span class="manager-btn-text">
+						может ещё дополнительно посмотрим экскурсии?
+					</span>
+				</button>
+					</div>
+			`
+		},
+
 
 	}
 
@@ -516,11 +576,61 @@ $(function () {
 		let managerBtnPopup = document.querySelector('.manager-btn-popup');
 		if (managerBtnPopup) {
 			managerBtnPopup.addEventListener('click', () => {
-				console.log('red')
+				let dataArr = managerBtnPopup.getAttribute('data-open');
+				let id = document.getElementById(dataArr);
+				id.classList.add('--active')
+
 			})
 		}
 	}
-
+	// закрытие модального окна tour
+	function tourClose() {
+		let btn = document.querySelectorAll('.tour-box-btn');
+		let chat = document.querySelector('.main-chat');
+		btn.forEach(item => {
+			item.addEventListener('click', () => {
+				let dataArr = item.getAttribute('data-dialog');
+				let dataChoice = item.getAttribute('data-choice');
+				if (dataArr != dataChoice) {
+					item.classList.add('--no-active')
+				} else if (dataChoice == dataArr) {
+					item.classList.add('active')
+					setTimeout(() => {
+						let back = document.querySelector('.tour-back');
+						back.classList.remove('--active');
+						chat.innerHTML = '';
+					}, 2000)
+					setTimeout(() => {
+						dialog(startList[`${dataArr}-answer`]['name'], startList[`${dataArr}-answer`]['text'], startList[`${dataArr}-answer`]['class'], startList[`${dataArr}-answer`]['classTwo'], startList[`${dataArr}-answer`]['headBtn'], startList[`${dataArr}-answer`]['boxBtn'])
+						diologRadios()
+						madalOpen()
+					}, 3000)
+					setTimeout(() => {
+						dialog(startList[dataArr]['name'], startList[dataArr]['text'], startList[dataArr]['class'])
+						diologRadios()
+						madalOpen()
+					}, 4000)
+					setTimeout(() => {
+						dialog(startList[`${dataArr}-answer-two`]['name'], startList[`${dataArr}-answer-two`]['text'], startList[`${dataArr}-answer-two`]['class'], startList[`${dataArr}-answer-two`]['classTwo'], startList[`${dataArr}-answer-two`]['headBtn'], startList[`${dataArr}-answer-two`]['boxBtn'])
+						diologRadios()
+						madalOpen()
+					}, 5000)
+					setTimeout(() => {
+						dialog(startList[`${dataArr}-two`]['name'], startList[`${dataArr}-two`]['text'], startList[`${dataArr}-two`]['class'])
+						diologRadios()
+						madalOpen()
+					}, 6000)
+					setTimeout(() => {
+						dialog(startList[`${dataArr}-answer-three`]['name'], startList[`${dataArr}-answer-three`]['text'], startList[`${dataArr}-answer-three`]['class'], startList[`${dataArr}-answer-three`]['classTwo'], startList[`${dataArr}-answer-three`]['headBtn'], startList[`${dataArr}-answer-three`]['boxBtn'])
+						diologRadios()
+						choiceOfAnswer('cleaning')
+						madalOpen()
+					}, 7000)
+				}
+			})
+		})
+	}
+	tourClose()
 	// добовление удаление скруглениий окна диалогов
 	function diologRadios() {
 		let chat = document.querySelector('.main-chat');
