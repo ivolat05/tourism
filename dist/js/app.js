@@ -781,7 +781,7 @@ $(function () {
 			"text": `До свидания! `,
 			"boxBtn": `
 			<div class="manager-choice">
-			<button class="manager-btn" data-number='3' data-dialog='goodbye' data-choice='goodbye'>
+			<button class="manager-btn" data-number='call' data-dialog='call' data-choice='call'>
 			<span class="manager-btn-text">
 			Желаю вам хорошего отдыха!
 			</span>
@@ -789,6 +789,302 @@ $(function () {
 			</div>
 			`
 		},
+		"call": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": 'call--two',
+			"headBtn": `
+			<button class="manger-head-btn">
+							?
+						</button>`,
+			"text": `Теперь необходимо для клиентов забронировать трансфер от аэропорта до их отеля.`,
+			"boxBtn": `
+			<div class="manager-choice">
+			<button class="manager-btn" data-number='4'   data-dialog='altaiAvto' data-choice='altaiAvto'>
+			<span class="manager-btn-text">
+				Позвонить автотранспортной компании
+				в Горно-Алтайске
+			</span>
+		</button>
+			</div>
+			`
+		},
+
+		"altaiAvto": {
+			"name": "Автотранспортная компания «Алтай-авто»",
+			"text": `Алло`,
+			"class": 'client'
+		},
+		"altaiAvto-answer": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			<button class="manger-head-btn">
+							?
+						</button>`,
+			"text": `Здравствуйте! Это турфирма «Билет в отпуск», могу ли я заказать для двух человек трансфер от аэропорта до отеля «Сила гор Алтая» 17 июля (прилёт в 17:10) и обратно до аэропорта 24 июля (вылет в 18:00)?`,
+		},
+		"altaiAvto-two": {
+			"name": "Автотранспортная компания «Алтай-авто»",
+			"text": `Здравствуйте! К сожалению, в эти даты наши водители заняты. `,
+			"class": 'client'
+		},
+		"altaiAvto-answer-two": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			<button class="manger-head-btn">
+							?
+						</button>`,
+			"text": `Теперь необходимо для клиентов забронировать трансфер от аэропорта до их отеля.`,
+			"boxBtn": `
+			<div class="manager-choice">
+				<button class="manager-btn" data-number='5' data-dialog='anotherTruckingCompany' data-choice='anotherTruckingCompany' >
+					<span class="manager-btn-text">
+					Позвонить другой автотранспортной компании в Горно-Алтайске
+					</span>
+				</button>
+				<button class="manager-btn" data-number='5' data-dialog='anotherTruckingCompany' data-choice='insuranceСhoice' >
+					<span class="manager-btn-text">
+					Отказаться от трансфера
+					</span>
+				</button>
+
+			</div>
+			`
+		},
+
+		"anotherTruckingCompany-answer": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			<button class="manger-head-btn">
+							?
+						</button>`,
+			"text": `Здравствуйте! Это турфирма «Билет в отпуск», могу ли я заказать для двух человек трансфер от аэропорта до отеля «Сила гор Алтая» 17 июля (прилёт в 17:10) и обратно до аэропорта 24 июля (вылет в 18:00)?`,
+		},
+		"anotherTruckingCompany": {
+			"name": "Автотранспортная компания «Старт»",
+			"text": `Здравствуйте! Да, конечно. Сколько будет человек?`,
+			"class": 'client'
+		},
+
+		"anotherTruckingCompany-answer-two": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			<button class="manger-head-btn">
+							?
+						</button>`,
+			"text": `Два человека.`,
+		},
+
+		"anotherTruckingCompany-two": {
+			"name": "Автотранспортная компания «Старт»",
+			"text": `Организуем трансфер.`,
+			"class": 'client'
+		},
+		"anotherTruckingCompany-answer-three": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			<button class="manger-head-btn">
+							?
+						</button>`,
+			"text": `Спасибо!`,
+			"boxBtn": `
+			<div class="manager-choice">
+				<button class="manager-btn" data-number='4' data-dialog='gid' data-choice='no' >
+					<span class="manager-btn-text">
+					Завершить организацию тура для клиентов
+					</span>
+				</button>
+				<button class="manager-btn" data-number='4' data-dialog='gid' data-choice='gid' >
+					<span class="manager-btn-text">
+					Позвонить гиду в Горно-Алтайске
+					</span>
+				</button>
+
+			</div>
+			`
+		},
+
+		"gid": {
+			"name": "Гид",
+			"text": `Алло!`,
+			"class": 'client'
+		},
+		"gid-answer": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			<button class="manger-head-btn">
+							?
+						</button>`,
+			"text": `Здравствуйте! Это турфирма «Билет в отпуск», у нас есть заказ на организацию двухдневного похода по Алтайским горам в период с 17 по 24 июля.`,
+		},
+		"gid-two": {
+			"name": "Гид",
+			"text": `Добрый день! Мы готовы организовать поход с 21 по 22 июля. Сколько туристов будет в походе?`,
+			"class": 'client'
+		},
+		"gid-answer-two": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			<button class="manger-head-btn">
+							?
+						</button>`,
+			"text": `Там будут...`,
+			"boxBtn": `
+			<div class="manager-choice">
+				<button class="manager-btn"   data-dialog='clientEquipment' data-choice='no' >
+					<span class="manager-btn-text">
+					10 человек
+					</span>
+				</button>
+				<button class="manager-btn"   data-dialog='clientEquipment' data-choice='clientEquipment' >
+					<span class="manager-btn-text">
+					два человека: молодые парень и девушка.
+					</span>
+				</button>
+			</div>
+			`
+		},
+		"clientEquipment": {
+			"name": "Гид",
+			"text": `Хорошо! Есть ли клиентов туристическое снаряжение?`,
+			"class": 'client'
+		},
+
+		"clientEquipment-answer": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			<button class="manger-head-btn">
+							?
+						</button>`,
+			"text": `У клиентов ...`,
+			"boxBtn": `
+			<div class="manager-choice">
+				<button class="manager-btn"  data-dialog='aletClient' data-choice='no' >
+					<span class="manager-btn-text">
+					имеется полный комплект снаряжения.
+					</span>
+				</button>
+				<button class="manager-btn"  data-dialog='aletClient' data-choice='insuranceСhoice' >
+					<span class="manager-btn-text">
+					есть всё, кроме палатки.
+					</span>
+				</button>
+				<button class="manager-btn"  data-dialog='aletClient' data-choice='aletClient' >
+					<span class="manager-btn-text">
+					нет снаряжения. Необходимо арендовать палатку, спальные мешки и коврики, рюкзаки
+					</span>
+				</button>
+			</div>
+			`
+		},
+
+		"aletClient": {
+			"name": "Гид",
+			"text": `Мы всё организуем и арендуем снаряжение. Предупредите клиентов, чтобы брали с собой удобную одежду и спортивную обувь.`,
+			"class": 'client'
+		},
+
+		"aletClient-answer": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			<button class="manger-head-btn">
+							?
+						</button>`,
+			"text": `Обязательно предупрежу, спасибо!`,
+			"boxBtn": `
+			<div class="manager-choice">
+				<button class="manager-btn" data-number="3"  data-dialog='callToClint' data-choice='no' >
+					<span class="manager-btn-text">
+					Завершить работу
+					</span>
+				</button>
+				<button class="manager-btn"  data-number="3" data-dialog='callToClint' data-choice='callToClint' >
+					<span class="manager-btn-text">
+					Предупредить клиентов
+					</span>
+				</button>
+			</div>
+			`
+		},
+
+		"callToClint-answer": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			 `,
+			"text": `Алло! Я организовала для вас поход по горам с 19 по 20 июля, с вами будет профессональный гид, который арендует туристическое снаряжение. `,
+		},
+		"callToClint": {
+			"name": "Клиенты",
+			"text": `Отлично!`,
+			"class": 'client'
+		},
+		"callToClint-answer-1": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			<button class="manger-head-btn">
+							?
+						</button>`,
+			"text": `С собой обязательно возьмите...`,
+			"boxBtn": `
+			<div class="manager-choice">
+				<button class="manager-btn" data-number="finalGame"  data-dialog='finalGame' data-choice='no' >
+					<span class="manager-btn-text">
+					палатку
+					</span>
+				</button>
+				<button class="manager-btn"  data-number="finalGame" data-dialog='finalGame' data-choice='finalGame' >
+					<span class="manager-btn-text">
+					удобную одежду и спортивную обувь
+					</span>
+				</button>
+				<button class="manager-btn"  data-number="finalGame" data-dialog='finalGame' data-choice='callToClint' >
+					<span class="manager-btn-text">
+					спальные мешки
+					</span>
+				</button>
+
+			</div>
+			`
+		},
+
+		"finalGame": {
+			"name": "Клиенты",
+			"text": `Хорошо, спасибо!`,
+			"class": 'client'
+		},
+		"finalGame-answer": {
+			"name": "Менеджер «Билет в отпуск»",
+			"class": 'manager',
+			"classTwo": '--two',
+			"headBtn": `
+			<button class="manger-head-btn">
+							?
+						</button>`,
+			"text": `До свидания!`,
+			"boxBtn": ` `
+		}
 	}
 
 	// start
@@ -821,6 +1117,7 @@ $(function () {
 				let dataNumber = item.getAttribute('data-number');
 
 				if (dataArr == dataChoise) {
+
 					if (counter == 'cleaning') {
 						chat.innerHTML = ''
 
@@ -837,7 +1134,34 @@ $(function () {
 							choiceOfAnswer('cleaning')
 							madalOpen()
 						}, 2000)
-					} else if (dataNumber == 4) {
+					} else if (dataNumber == 5) {
+						setTimeout(() => {
+							dialog(startList[`${dataArr}-answer`]['name'], startList[`${dataArr}-answer`]['text'], startList[`${dataArr}-answer`]['class'], startList[`${dataArr}-answer`]['classTwo'], startList[`${dataArr}-answer`]['headBtn'], startList[`${dataArr}-answer`]['boxBtn'])
+							diologRadios()
+						}, 1000)
+						setTimeout(() => {
+							dialog(startList[dataArr]['name'], startList[dataArr]['text'], startList[dataArr]['class'])
+							diologRadios()
+						}, 2000)
+						setTimeout(() => {
+							dialog(startList[`${dataArr}-answer-two`]['name'], startList[`${dataArr}-answer-two`]['text'], startList[`${dataArr}-answer-two`]['class'], startList[`${dataArr}-answer-two`]['classTwo'], startList[`${dataArr}-answer-two`]['headBtn'], startList[`${dataArr}-answer-two`]['boxBtn'])
+							diologRadios()
+							choiceOfAnswer('cleaning')
+							madalOpen()
+						}, 3000)
+						setTimeout(() => {
+							dialog(startList[`${dataArr}-two`]['name'], startList[`${dataArr}-two`]['text'], startList[`${dataArr}-two`]['class'])
+							diologRadios()
+						}, 4000)
+						setTimeout(() => {
+							dialog(startList[`${dataArr}-answer-three`]['name'], startList[`${dataArr}-answer-three`]['text'], startList[`${dataArr}-answer-three`]['class'], startList[`${dataArr}-answer-three`]['classTwo'], startList[`${dataArr}-answer-three`]['headBtn'], startList[`${dataArr}-answer-three`]['boxBtn'])
+							diologRadios()
+							choiceOfAnswer('cleaning')
+							madalOpen()
+						}, 5000)
+					}
+
+					else if (dataNumber == 4) {
 
 						setTimeout(() => {
 							dialog(startList[dataArr]['name'], startList[dataArr]['text'], startList[dataArr]['class'])
@@ -872,6 +1196,55 @@ $(function () {
 							diologRadios()
 							choiceOfAnswer('cleaning')
 							madalOpen()
+						}, 3000)
+					} else if (dataNumber == 'call') {
+						let mainWrapp = document.querySelector('.main-wrapp');
+						mainWrapp.style.background = "url('../img/main/main-2.jpg')no-repeat top center";
+						setTimeout(() => {
+							dialog(startList[`${dataArr}`]['name'], startList[`${dataArr}`]['text'], startList[`${dataArr}`]['class'], startList[`${dataArr}`]['classTwo'], startList[`${dataArr}`]['headBtn'], startList[`${dataArr}`]['boxBtn'])
+							diologRadios()
+							choiceOfAnswer('cleaning')
+							madalOpen()
+						}, 3000)
+					} else if (dataNumber == 'finalGame') {
+						setTimeout(() => {
+							dialog(startList[dataArr]['name'], startList[dataArr]['text'], startList[dataArr]['class'])
+							diologRadios()
+						}, 1000)
+						setTimeout(() => {
+							dialog(startList[`${dataArr}-answer`]['name'], startList[`${dataArr}-answer`]['text'], startList[`${dataArr}-answer`]['class'], startList[`${dataArr}-answer`]['classTwo'], startList[`${dataArr}-answer`]['headBtn'], startList[`${dataArr}-answer`]['boxBtn'])
+							diologRadios()
+							choiceOfAnswer('cleaning')
+							madalOpen()
+						}, 2000)
+						setTimeout(() => {
+							let chatBox = document.querySelector('.main-chat');
+							let elem = document.createElement("div");
+							elem.classList.add('congratulation');
+							elem.innerHTML = `
+							<div class="congratulation-coll">
+								<div class="congratulation-title">
+									Поздравляем!
+								</div>
+								<div class="congratulation-text">
+									Вы учли все пожелания и возможности клиентов, <br> чтобы организовать яркий и запоминающийся отпуск.
+								</div>
+							</div>
+							<div class="congratulation-coll-2">
+								<img src="./img/congratulation/congratulation.svg" alt="" class="congratulation-img">
+								<a href="#popup" class="congratulation-link open-modal">
+									Перейти к финалу
+								</a>
+							</div>
+							 `
+							chatBox.appendChild(elem);
+
+							$('.open-modal').magnificPopup({
+								type: 'inline',
+								mainClass: 'mfp-fade'
+
+							});
+
 						}, 3000)
 					}
 
@@ -1139,5 +1512,10 @@ $(function () {
 		}
 		const timerStart = setInterval(time, 1000)
 	}
+	$('.open-modal').magnificPopup({
+		type: 'inline',
+		mainClass: 'mfp-fade'
+
+	});
 
 })
