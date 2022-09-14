@@ -1187,6 +1187,7 @@ $(function () {
 				let dataChoise = item.getAttribute('data-choice');
 				let dataNumber = item.getAttribute('data-number');
 				if (dataArr !== dataChoise) {
+					item.classList.add('--wrong');
 					buttonError(listError[`${dataChoise}`]['title'], listError[`${dataChoise}`]['text'])
 				}
 				if (dataArr == dataChoise) {
