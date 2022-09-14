@@ -1155,6 +1155,39 @@ $(function () {
 			"title": "",
 			"text": 'Лучше заранее предупредить клиентов об организационных моментах.',
 		},
+		"ins-error": {
+			"title": "",
+			"text": 'У клиентов впереди активный вид отдыха - поход по горам. Лучше подстраховаться и оформить расширенную страховку.',
+		},
+		"equipment-error": {
+			"title": "",
+			"text": 'Цена всей поездки превысит 80 000 рублей.',
+		},
+		"equipment-error-2": {
+			"title": "",
+			"text": 'Этот вариант не подходит под запрос клиента.',
+		},
+		"sentence-error": {
+			"title": "Ох, это неверный вариант!",
+			"text": 'Он устраивает наших клиентов по цене, но перелёты - ночные.',
+		},
+		"sentence-error-2": {
+			"title": "Ох, это неверный вариант!",
+			"text": 'Он очень дорогой для нашего клиента.',
+		},
+		"sentence-error-3": {
+			"title": "Ох, это неверный вариант!",
+			"text": 'Он устраивает наших клиентов по цене, но перелёты – ночные. Также клиент хотел просыпаться с видом на горы.',
+		},
+		"sentence-error-4": {
+			"title": "Ох, это неверный вариант!",
+			"text": 'Он устраивает наших клиентов по цене, но клиент хотел просыпаться с видом на горы.',
+		},
+		"sentence-error-5": {
+			"title": "Ох, это неверный вариант!",
+			"text": 'Он устраивает наших клиентов по цене, но перелёты - ночные.',
+		},
+
 	}
 
 	// start
@@ -1424,6 +1457,7 @@ $(function () {
 				let dataChoice = item.getAttribute('data-choice');
 				if (dataArr != dataChoice) {
 					item.classList.add('--no-active')
+					buttonError(listError[`${dataChoice}`]['title'], listError[`${dataChoice}`]['text'])
 				} else if (dataChoice == dataArr) {
 					item.classList.add('active')
 					setTimeout(() => {
@@ -1473,6 +1507,7 @@ $(function () {
 				let dataChoice = item.getAttribute('data-choice');
 				if (dataArr != dataChoice) {
 					item.classList.add('--no-active')
+					buttonError(listError[`${dataChoice}`]['title'], listError[`${dataChoice}`]['text'])
 				} else if (dataChoice == dataArr) {
 					item.classList.add('active')
 					setTimeout(() => {
@@ -1513,6 +1548,7 @@ $(function () {
 				let dataChoice = item.getAttribute('data-choice');
 				if (dataArr != dataChoice) {
 					item.classList.add('--no-active')
+					buttonError(listError[`${dataChoice}`]['title'], listError[`${dataChoice}`]['text'])
 				} else if (dataChoice == dataArr) {
 					item.classList.add('active')
 					setTimeout(() => {
