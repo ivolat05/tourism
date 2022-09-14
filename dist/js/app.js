@@ -800,7 +800,7 @@ $(function () {
 			"text": `Теперь необходимо для клиентов забронировать трансфер от аэропорта до их отеля.`,
 			"boxBtn": `
 			<div class="manager-choice">
-			<button class="manager-btn" data-number='4'   data-dialog='altaiAvto' data-choice='altaiAvto'>
+			<button class="manager-btn" data-number='4'     data-dialog='altaiAvto' data-choice='altaiAvto'>
 			<span class="manager-btn-text">
 				Позвонить автотранспортной компании
 				в Горно-Алтайске
@@ -1109,19 +1109,88 @@ $(function () {
 	function choiceOfAnswer(counter) {
 		let btn = document.querySelectorAll('.manager-btn');
 		let chat = document.querySelector('.main-chat');
+		let mainWrappBox = document.querySelector('.main-wrapp-box');
 		btn.forEach(item => {
 			item.addEventListener('click', () => {
 
 				let dataArr = item.getAttribute('data-dialog');
 				let dataChoise = item.getAttribute('data-choice');
 				let dataNumber = item.getAttribute('data-number');
-
 				if (dataArr == dataChoise) {
+					console.log(dataArr)
+					if (dataArr == 'altaiAvto') {
+						setTimeout(() => {
+							if (mainWrappBox.classList.contains('--avto-1')) {
+								mainWrappBox.classList.remove('--avto-1')
+							}
+							if (mainWrappBox.classList.contains('--avto-2')) {
+								mainWrappBox.classList.remove('--avto-2')
+							}
+							if (mainWrappBox.classList.contains('--gid')) {
+								mainWrappBox.classList.remove('--gid')
+							}
+							if (mainWrappBox.classList.contains('--clients')) {
+								mainWrappBox.classList.remove('--clients')
+							}
+							mainWrappBox.classList.add('--avto-1')
+						}, 1000)
+
+					} else if (dataArr == 'anotherTruckingCompany') {
+						setTimeout(() => {
+							if (mainWrappBox.classList.contains('--avto-1')) {
+								mainWrappBox.classList.remove('--avto-1')
+							}
+							if (mainWrappBox.classList.contains('--avto-2')) {
+								mainWrappBox.classList.remove('--avto-2')
+							}
+							if (mainWrappBox.classList.contains('--gid')) {
+								mainWrappBox.classList.remove('--gid')
+							}
+							if (mainWrappBox.classList.contains('--clients')) {
+								mainWrappBox.classList.remove('--clients')
+							}
+							mainWrappBox.classList.add('--avto-2')
+						}, 1000)
+					} else if (dataArr == 'gid') {
+						setTimeout(() => {
+							if (mainWrappBox.classList.contains('--avto-1')) {
+								mainWrappBox.classList.remove('--avto-1')
+							}
+							if (mainWrappBox.classList.contains('--avto-2')) {
+								mainWrappBox.classList.remove('--avto-2')
+							}
+							if (mainWrappBox.classList.contains('--gid')) {
+								mainWrappBox.classList.remove('--gid')
+							}
+							if (mainWrappBox.classList.contains('--clients')) {
+								mainWrappBox.classList.remove('--clients')
+							}
+							mainWrappBox.classList.add('--gid')
+						}, 1000)
+					} else if (dataArr == 'callToClint') {
+						setTimeout(() => {
+							if (mainWrappBox.classList.contains('--avto-1')) {
+								mainWrappBox.classList.remove('--avto-1')
+							}
+							if (mainWrappBox.classList.contains('--avto-2')) {
+								mainWrappBox.classList.remove('--avto-2')
+							}
+							if (mainWrappBox.classList.contains('--gid')) {
+								mainWrappBox.classList.remove('--gid')
+							}
+							if (mainWrappBox.classList.contains('--clients')) {
+								mainWrappBox.classList.remove('--clients')
+							}
+							mainWrappBox.classList.add('--clients')
+						}, 1000)
+					}
 
 					if (counter == 'cleaning') {
 						chat.innerHTML = ''
 
 					}
+
+
 					if (!dataNumber) {
 
 						setTimeout(() => {
