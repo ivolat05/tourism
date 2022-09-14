@@ -1117,7 +1117,6 @@ $(function () {
 				let dataChoise = item.getAttribute('data-choice');
 				let dataNumber = item.getAttribute('data-number');
 				if (dataArr == dataChoise) {
-					console.log(dataArr)
 					if (dataArr == 'altaiAvto') {
 						setTimeout(() => {
 							if (mainWrappBox.classList.contains('--avto-1')) {
@@ -1546,6 +1545,7 @@ $(function () {
 					</div>
 					${boxBtn}	 `
 		chatBox.appendChild(elem);
+		buttonExplanation()
 	}
 
 
@@ -1587,4 +1587,79 @@ $(function () {
 
 	});
 
+	// вызов поясения к вопросу
+	function buttonExplanation() {
+		let btn = document.querySelectorAll('.manger-head-btn');
+		let mainWrappBox = document.querySelector('.main-wrapp-box');
+		btn.forEach(item => {
+			item.addEventListener('click', () => {
+
+				let element = document.createElement("div");
+
+				element.classList.add('push');
+				element.innerHTML = `
+				<div class="push-box-img">
+				<img src="./img/push/push.svg" alt="" class="push-img">
+			</div>
+			<div class="push-coll">
+				<div class="push-title">
+					Выберите действие
+				</div>
+				<div class="push-text">
+					Не знаете, что делать? Загляните в справочник!
+				</div>
+			</div>
+			`
+				mainWrappBox.appendChild(element);
+				setTimeout(() => {
+					let blockDell = document.querySelectorAll('.push');
+					blockDell.forEach(item => {
+						item.remove();
+					})
+
+
+				}, 2000)
+
+			})
+
+		})
+
+	}
+
+	// подсказка нахождения ошибки
+	function puspModal() {
+		let btn = document.querySelectorAll('.questionnaire-head-btn');
+		let mainWrappBox = document.querySelector('.main-wrapp-box');
+		btn.forEach(item => {
+			item.addEventListener('click', () => {
+
+				let element = document.createElement("div");
+
+				element.classList.add('push');
+				element.innerHTML = `
+				<div class="push-box-img">
+				<img src="./img/push/push.svg" alt="" class="push-img">
+			</div>
+			<div class="push-coll">
+				<div class="push-title">
+				Сверьте данные паспорта и проверьте даты
+				</div>
+			</div>
+			`
+				mainWrappBox.appendChild(element);
+				setTimeout(() => {
+					let blockDell = document.querySelectorAll('.push');
+					blockDell.forEach(item => {
+						item.remove();
+					})
+
+
+				}, 2000)
+
+			})
+
+		})
+
+	}
+	puspModal();
 })
