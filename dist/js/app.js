@@ -28,7 +28,6 @@ $(function () {
 							<span class="manager-btn-text">
 								Когда у вас отпуск?
 							</span>
-
 							<span class="manger-btn-span">
 								Выберите действие
 							</span>
@@ -52,12 +51,12 @@ $(function () {
 			"text": `Хорошо, лето - прекрасное время для отдыха.`,
 			"boxBtn": `
 			<div class="manager-choice">
-						<button class="manager-btn" data-dialog='actions' data-choice='actions'>
-							<span class="manager-btn-text">
-							Вы уже интересовались какими-то направлениями?
-							</span>
-						</button>
-					</div>
+				<button class="manager-btn" data-dialog='actions' data-choice='actions'>
+					<span class="manager-btn-text">
+						Вы уже интересовались какими-то направлениями?
+					</span>
+				</button>
+			</div>
 			`
 		},
 		"actions": {
@@ -76,7 +75,7 @@ $(function () {
 			"text": `Озеро Байкал - очень красивое место. С учетом перелётов и проживания стоимость недельного тура начинается...`,
 			"boxBtn": `
 			<div class="manager-choice">
-						<button class="manager-btn" data-dialog='budget' data-choice='no'>
+						<button class="manager-btn" data-dialog='budget' data-choice='budget-1'>
 							<span class="manager-btn-text">
 							от 70 000 рублей
 							</span>
@@ -86,7 +85,7 @@ $(function () {
 							от 90 000 рублей
 							</span>
 						</button>
-						<button class="manager-btn" data-dialog='budget' data-choice='no'>
+						<button class="manager-btn" data-dialog='budget' data-choice='budget-1'>
 							<span class="manager-btn-text">
 							Вы уже интересовались какими-то направлениями?
 							</span>
@@ -111,7 +110,7 @@ $(function () {
 			"text": `Озеро Байкал - очень красивое место. С учетом перелётов и проживания стоимость недельного тура начинается...`,
 			"boxBtn": `
 			<div class="manager-choice">
-						<button class="manager-btn" data-dialog='budget' data-choice='no'>
+						<button class="manager-btn" data-dialog='options' data-choice='options-1'>
 							<span class="manager-btn-text">
 							вы сможете ещё накопить денег на отпуск? Это же не так дорого!
 							</span>
@@ -145,12 +144,12 @@ $(function () {
 							Алтайские горы, курорты Сочи, курорты Крыма, Санкт-Петербург и пригороды
 							</span>
 						</button>
-						<button class="manager-btn" data-dialog='options' data-choice='no'>
+						<button class="manager-btn" data-dialog='interes' data-choice='budget-1'>
 							<span class="manager-btn-text">
 							Алтайские горы, Санкт-Петербург и пригороды, Камчатский полуостров
 							</span>
 						</button>
-						<button class="manager-btn" data-dialog='budget' data-choice='no'>
+						<button class="manager-btn" data-dialog='interes' data-choice='budget-1'>
 							<span class="manager-btn-text">
 							Курорты Сочи, курорты Крыма, Камчатский полуостров
 							</span>
@@ -175,22 +174,22 @@ $(function () {
 			"text": `Да, все варианты очень хорошие.`,
 			"boxBtn": `
 			<div class="manager-choice">
-			<button class="manager-btn" data-dialog='budget' data-choice='no'>
+			<button class="manager-btn" data-dialog='budget' data-choice='interes-error'>
 							<span class="manager-btn-text">
 							Ну что, тогда в Сочи?
 							</span>
 						</button>
-						<button class="manager-btn" data-dialog='budget' data-choice='no'>
+						<button class="manager-btn" data-dialog='budget' data-choice='interes-error'>
 							<span class="manager-btn-text">
 							Давайте сразу в Крым?
 							</span>
 						</button>
-						<button class="manager-btn" data-dialog='budget' data-choice='no'>
+						<button class="manager-btn" data-dialog='budget' data-choice='interes-error'>
 							<span class="manager-btn-text">
 							Беру билеты в Санкт-Петербург?
 							</span>
 						</button>
-						<button class="manager-btn" data-dialog='budget' data-choice='no'>
+						<button class="manager-btn" data-dialog='budget' data-choice='interes-error'>
 							<span class="manager-btn-text">
 							Летим на Алтай?
 							</span>
@@ -236,17 +235,17 @@ $(function () {
 			"boxBtn": `
 			<div class="manager-choice">
 
-						<button class="manager-btn" data-dialog='budget' data-choice='no'>
+						<button class="manager-btn" data-dialog='budget' data-choice='altai-error'>
 							<span class="manager-btn-text">
 							Санкт-Петербург и пригороды
 							</span>
 						</button>
-						<button class="manager-btn" data-dialog='budget' data-choice='no'>
+						<button class="manager-btn" data-dialog='budget' data-choice='altai-error-2'>
 							<span class="manager-btn-text">
 							курорты Сочи
 							</span>
 						</button>
-						<button class="manager-btn" data-dialog='budget' data-choice='no'>
+						<button class="manager-btn" data-dialog='budget' data-choice='altai-error-2'>
 							<span class="manager-btn-text">
 							курорты Крыма
 							</span>
@@ -284,7 +283,7 @@ $(function () {
 			"text": `На Алтае...`,
 			"boxBtn": `
 			<div class="manager-choice">
-			<button class="manager-btn" data-dialog='budget' data-choice='no'>
+			<button class="manager-btn" data-dialog='budget' data-choice='july-error'>
 							<span class="manager-btn-text">
 							такого, к сожалению, нет, но вы найдете другие развлечения.
 							</span>
@@ -295,7 +294,7 @@ $(function () {
 							</span>
 						</button>
 
-						<button class="manager-btn" data-dialog='interes-2' data-choice='no' >
+						<button class="manager-btn" data-dialog='interes-2' data-choice='july-error' >
 							<span class="manager-btn-text">
 							Хм, не знаю, спросите уже на месте у местных гидов.
 							</span>
@@ -320,7 +319,7 @@ $(function () {
 			"text": `В июле...`,
 			"boxBtn": `
 			<div class="manager-choice">
-			<button class="manager-btn" data-dialog='budget' data-choice='no'>
+			<button class="manager-btn" data-dialog='budget' data-choice='july-error'>
 							<span class="manager-btn-text">
 							там прохладно, температура опускается ниже 0 градусов. Это же горы.
 							</span>
@@ -331,7 +330,7 @@ $(function () {
 							</span>
 						</button>
 
-						<button class="manager-btn" data-dialog='interes-2' data-choice='no' >
+						<button class="manager-btn" data-dialog='interes-2' data-choice='july-error' >
 							<span class="manager-btn-text">
 							очень холодно и мокро, поэтому берите дождевики.
 							</span>
@@ -361,13 +360,13 @@ $(function () {
 							красивая дорога среди гор под названием Чуйский тракт, гора Белуха - высочашая в регионе, очень живописная река Катунь, а ещё перевалы: например, Кату-Ярык
 							</span>
 						</button>
-						<button class="manager-btn" data-dialog='attraction' data-choice='no'>
+						<button class="manager-btn" data-dialog='attraction' data-choice='july-error'>
 							<span class="manager-btn-text">
 							высокие горы Эльбрус и Казбек, горные озёра, очень живописные ущелья, например, Аманауз и Джейрахское, древний некрополь Даргавс
 							</span>
 						</button>
 
-						<button class="manager-btn" data-dialog='interes-2' data-choice='no' >
+						<button class="manager-btn" data-dialog='interes-2' data-choice='july-error' >
 							<span class="manager-btn-text">
 							остров Ольхон, Тажеранские степи, живописная Тункинская долина, озеро Фролиха, спрятанное в высоких горах
 							</span>
@@ -455,12 +454,12 @@ $(function () {
 			"text": `Отлично, тогда ...`,
 			"boxBtn": `
 			<div class="manager-choice">
-				<button class="manager-btn" data-dialog='excursion' data-choice='no' >
+				<button class="manager-btn" data-dialog='excursion' data-choice='excursion-error' >
 					<span class="manager-btn-text">
 						давайте оформим документы
 					</span>
 				</button>
-				<button class="manager-btn" data-dialog='excursion' data-choice='no' >
+				<button class="manager-btn" data-dialog='excursion' data-choice='excursion-error-2' >
 				<span class="manager-btn-text">
 					останавливаемся на этом варианте, до свидания!
 				</span>
@@ -575,7 +574,7 @@ $(function () {
 			"text": `Ну что, ...`,
 			"boxBtn": `
 			<div class="manager-choice">
-				<button class="manager-btn" data-number='3' data-dialog='insurance' data-choice='no' >
+				<button class="manager-btn" data-number='3' data-dialog='insurance' data-choice='insurance-error' >
 					<span class="manager-btn-text">
 					тогда давайте оформлять документы
 					</span>
@@ -585,7 +584,7 @@ $(function () {
 					для таких экскурсий было бы неплохо сделать страховку
 					</span>
 				</button>
-				<button class="manager-btn" data-number='3' data-dialog='insurance' data-choice='no' >
+				<button class="manager-btn" data-number='3' data-dialog='insurance' data-choice='insurance-error-2' >
 					<span class="manager-btn-text">
 					на этом всё. До свидания!
 					</span>
@@ -653,7 +652,7 @@ $(function () {
 			"text": `Осталось только...`,
 			"boxBtn": `
 			<div class="manager-choice">
-				<button class="manager-btn"  data-dialog='tests' data-choice='no' >
+				<button class="manager-btn"  data-dialog='tests' data-choice='tests-error' >
 					<span class="manager-btn-text">
 						сказать друг другу «до свидания»!
 					</span>
@@ -688,12 +687,12 @@ $(function () {
 							ваших паспортов
 							</span>
 						</button>
-						<button class="manager-btn" data-dialog='pasport' data-choice='actions'>
+						<button class="manager-btn" data-dialog='pasport' data-choice='pasport-error'>
 							<span class="manager-btn-text">
 							паспорта и СНИЛС
 							</span>
 						</button>
-						<button class="manager-btn" data-dialog='pasport' data-choice='actions'>
+						<button class="manager-btn" data-dialog='pasport' data-choice='pasport-error'>
 							<span class="manager-btn-text">
 							паспорта и свидетельства о рождении
 							</span>
@@ -748,7 +747,7 @@ $(function () {
 					распечатать документы и оплатить
 					</span>
 				</button>
-				<button class="manager-btn" data-number='3' data-dialog='goodbye' data-choice='actions'>
+				<button class="manager-btn" data-number='3' data-dialog='goodbye' data-choice='goodbye-error'>
 					<span class="manager-btn-text">
 					Попрощаться
 					</span>
@@ -846,7 +845,7 @@ $(function () {
 					Позвонить другой автотранспортной компании в Горно-Алтайске
 					</span>
 				</button>
-				<button class="manager-btn" data-number='5' data-dialog='anotherTruckingCompany' data-choice='insuranceСhoice' >
+				<button class="manager-btn" data-number='5' data-dialog='anotherTruckingCompany' data-choice='anotherTruckingCompany-error' >
 					<span class="manager-btn-text">
 					Отказаться от трансфера
 					</span>
@@ -899,7 +898,7 @@ $(function () {
 			"text": `Спасибо!`,
 			"boxBtn": `
 			<div class="manager-choice">
-				<button class="manager-btn" data-number='4' data-dialog='gid' data-choice='no' >
+				<button class="manager-btn" data-number='4' data-dialog='gid' data-choice='gid-error' >
 					<span class="manager-btn-text">
 					Завершить организацию тура для клиентов
 					</span>
@@ -945,7 +944,7 @@ $(function () {
 			"text": `Там будут...`,
 			"boxBtn": `
 			<div class="manager-choice">
-				<button class="manager-btn"   data-dialog='clientEquipment' data-choice='no' >
+				<button class="manager-btn"   data-dialog='clientEquipment' data-choice='clientEquipment-error' >
 					<span class="manager-btn-text">
 					10 человек
 					</span>
@@ -975,12 +974,12 @@ $(function () {
 			"text": `У клиентов ...`,
 			"boxBtn": `
 			<div class="manager-choice">
-				<button class="manager-btn"  data-dialog='aletClient' data-choice='no' >
+				<button class="manager-btn"  data-dialog='aletClient' data-choice='clientEquipment-error' >
 					<span class="manager-btn-text">
 					имеется полный комплект снаряжения.
 					</span>
 				</button>
-				<button class="manager-btn"  data-dialog='aletClient' data-choice='insuranceСhoice' >
+				<button class="manager-btn"  data-dialog='aletClient' data-choice='clientEquipment-error' >
 					<span class="manager-btn-text">
 					есть всё, кроме палатки.
 					</span>
@@ -1011,7 +1010,7 @@ $(function () {
 			"text": `Обязательно предупрежу, спасибо!`,
 			"boxBtn": `
 			<div class="manager-choice">
-				<button class="manager-btn" data-number="3"  data-dialog='callToClint' data-choice='no' >
+				<button class="manager-btn" data-number="3"  data-dialog='callToClint' data-choice='callToClint-error' >
 					<span class="manager-btn-text">
 					Завершить работу
 					</span>
@@ -1049,7 +1048,7 @@ $(function () {
 			"text": `С собой обязательно возьмите...`,
 			"boxBtn": `
 			<div class="manager-choice">
-				<button class="manager-btn" data-number="finalGame"  data-dialog='finalGame' data-choice='no' >
+				<button class="manager-btn" data-number="finalGame"  data-dialog='finalGame' data-choice='clientEquipment-error' >
 					<span class="manager-btn-text">
 					палатку
 					</span>
@@ -1059,7 +1058,7 @@ $(function () {
 					удобную одежду и спортивную обувь
 					</span>
 				</button>
-				<button class="manager-btn"  data-number="finalGame" data-dialog='finalGame' data-choice='callToClint' >
+				<button class="manager-btn"  data-number="finalGame" data-dialog='finalGame' data-choice='clientEquipment-error' >
 					<span class="manager-btn-text">
 					спальные мешки
 					</span>
@@ -1085,6 +1084,77 @@ $(function () {
 			"text": `До свидания!`,
 			"boxBtn": ` `
 		}
+	}
+
+	let listError = {
+		"budget-1": {
+			"title": "Это неправильный вариант. ",
+			"text": 'Стоимость туров можно посмотреть в справочнике',
+		},
+		"options-1": {
+			"title": "",
+			"text": 'Стоимость такого предложения превышает сумму, которую клиенты готовы потратить на отпуск. Попробуйте уточнить их желаемый бюджет, иначе они могут просто уйти.',
+		},
+		"interes-error": {
+			"title": "",
+			"text": 'На данном этапе, чтобы определить верное направление, лучше всего – уточнить особые пожелания.',
+		},
+		"altai-error": {
+			"title": "Этот вариант не подходит.",
+			"text": ' Клиенты хотят провести отпуск поближе к природе, попробовать горные маршруты.',
+		},
+		"altai-error-2": {
+			"title": "Этот вариант не подходит.",
+			"text": 'Да, клиенты хотят провести отдых на природе, но без шумных топл туристов. Более того, клиенты уже отдыхали на Чёрном море в прошлом году.',
+		},
+		"july-error": {
+			"title": "Это неправильный вариант.",
+			"text": ' Подробно про Алтайские горы можно прочитать в справочнике',
+		},
+		"excursion-error": {
+			"title": "",
+			"text": 'Перед оформлением документов спросите клиентов об экскурсиях и дополнительных активностях.',
+		},
+		"excursion-error-2": {
+			"title": "",
+			"text": 'Вы не закончили оформление тура для вашего клиента. Если запутались в действиях, загляните в справочник.',
+		},
+		"insurance-error": {
+			"title": "",
+			"text": 'Предложите клиентам страховку. Если запутались в действиях, загляните в справочник.',
+		},
+		"insurance-error-2": {
+			"title": "",
+			"text": 'Вы не закончили оформление тура для вашего клиента. Если запутались в действиях, загляните в справочник.',
+		},
+		"tests-error": {
+			"title": "",
+			"text": 'Вы не закончили оформление тура для вашего клиента. Если запутались в действиях, загляните в справочник.',
+		},
+		"pasport-error": {
+			"title": "Ох, это неверный вариант!",
+			"text": 'Если запутались, загляните в справочник.',
+		},
+		"goodbye-error": {
+			"title": "",
+			"text": 'Вы не закончили оформление тура для вашего клиента. Если запутались в действиях, загляните в справочник.',
+		},
+		"anotherTruckingCompany-error": {
+			"title": "",
+			"text": 'Необходимо организовать трансфер до отеля для наших клиентов.',
+		},
+		"gid-error": {
+			"title": "",
+			"text": 'Завершать организацию тура ещё рано. Организуйте туристический поход по горам с профессиональным гидом.',
+		},
+		"clientEquipment-error": {
+			"title": "Ох, это неверный ответ.",
+			"text": 'Будьте внимательнее!',
+		},
+		"callToClint-error": {
+			"title": "",
+			"text": 'Лучше заранее предупредить клиентов об организационных моментах.',
+		},
 	}
 
 	// start
@@ -1116,7 +1186,16 @@ $(function () {
 				let dataArr = item.getAttribute('data-dialog');
 				let dataChoise = item.getAttribute('data-choice');
 				let dataNumber = item.getAttribute('data-number');
+				if (dataArr !== dataChoise) {
+					buttonError(listError[`${dataChoise}`]['title'], listError[`${dataChoise}`]['text'])
+				}
 				if (dataArr == dataChoise) {
+					let blockDell = document.querySelectorAll('.push-error');
+					if (blockDell) {
+						blockDell.forEach(item => {
+							item.remove();
+						})
+					}
 					if (dataArr == 'altaiAvto') {
 						setTimeout(() => {
 							if (mainWrappBox.classList.contains('--avto-1')) {
@@ -1662,4 +1741,33 @@ $(function () {
 
 	}
 	puspModal();
+
+
+	// вызов ошибки
+	function buttonError(title, text) {
+
+		let mainWrappBox = document.querySelector('.main-wrapp-box');
+		let element = document.createElement("div");
+		element.classList.add('push-error');
+		element.innerHTML = `
+				<div class="push-box-img">
+				<img src="./img/push/push-error.svg" alt="" class="push-img">
+			</div>
+			<div class="push-coll">
+				<div class="push-title">
+					${title}
+				</div>
+				<div class="push-text">
+					${text}
+				</div>
+			</div>
+			`
+		mainWrappBox.appendChild(element);
+		setTimeout(() => {
+			let blockDell = document.querySelectorAll('.push-error');
+			blockDell.forEach(item => {
+				item.remove();
+			})
+		}, 2000)
+	}
 })
