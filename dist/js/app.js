@@ -107,7 +107,7 @@ $(function () {
 			<button class="manger-head-btn">
 							?
 						</button>`,
-			"text": `Озеро Байкал - очень красивое место. С учетом перелётов и проживания стоимость недельного тура начинается...`,
+			"text": `Скажите, пожалуйста,...`,
 			"boxBtn": `
 			<div class="manager-choice">
 						<button class="manager-btn" data-dialog='options' data-choice='options-1'>
