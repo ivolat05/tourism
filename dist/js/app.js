@@ -1192,16 +1192,12 @@ $(function () {
 
 	// start
 	function start() {
-		setTimeout(() => {
-			dialog(startList['client']['name'], startList['client']['text'], startList['client']['class'])
-			diologRadios()
-		}, 1000)
-		setTimeout(() => {
-			dialog(startList['manger']['name'], startList['manger']['text'], startList['manger']['class'], startList['manger']['classTwo'], startList['manger']['headBtn'], startList['manger']['boxBtn'])
-			diologRadios()
-			choiceOfAnswer('cleaning')
-			timer()
-		}, 3000)
+		dialog(startList['client']['name'], startList['client']['text'], startList['client']['class'])
+		dialog(startList['manger']['name'], startList['manger']['text'], startList['manger']['class'], startList['manger']['classTwo'], startList['manger']['headBtn'], startList['manger']['boxBtn'])
+		diologRadios()
+		choiceOfAnswer('cleaning')
+		opacityNone()
+		timer()
 	}
 
 	start();
@@ -1304,80 +1300,55 @@ $(function () {
 
 
 					if (!dataNumber) {
-
-						setTimeout(() => {
-							dialog(startList[dataArr]['name'], startList[dataArr]['text'], startList[dataArr]['class'])
-							diologRadios()
-						}, 1000)
-						setTimeout(() => {
-							dialog(startList[`${dataArr}-answer`]['name'], startList[`${dataArr}-answer`]['text'], startList[`${dataArr}-answer`]['class'], startList[`${dataArr}-answer`]['classTwo'], startList[`${dataArr}-answer`]['headBtn'], startList[`${dataArr}-answer`]['boxBtn'])
-							diologRadios()
-							choiceOfAnswer('cleaning')
-							madalOpen()
-						}, 2000)
+						dialog(startList[dataArr]['name'], startList[dataArr]['text'], startList[dataArr]['class'])
+						dialog(startList[`${dataArr}-answer`]['name'], startList[`${dataArr}-answer`]['text'], startList[`${dataArr}-answer`]['class'], startList[`${dataArr}-answer`]['classTwo'], startList[`${dataArr}-answer`]['headBtn'], startList[`${dataArr}-answer`]['boxBtn'])
+						diologRadios()
+						choiceOfAnswer('cleaning')
+						madalOpen()
+						opacityNone()
 					} else if (dataNumber == 5) {
-						setTimeout(() => {
-							dialog(startList[`${dataArr}-answer`]['name'], startList[`${dataArr}-answer`]['text'], startList[`${dataArr}-answer`]['class'], startList[`${dataArr}-answer`]['classTwo'], startList[`${dataArr}-answer`]['headBtn'], startList[`${dataArr}-answer`]['boxBtn'])
-							diologRadios()
-						}, 1000)
-						setTimeout(() => {
-							dialog(startList[dataArr]['name'], startList[dataArr]['text'], startList[dataArr]['class'])
-							diologRadios()
-						}, 2000)
-						setTimeout(() => {
-							dialog(startList[`${dataArr}-answer-two`]['name'], startList[`${dataArr}-answer-two`]['text'], startList[`${dataArr}-answer-two`]['class'], startList[`${dataArr}-answer-two`]['classTwo'], startList[`${dataArr}-answer-two`]['headBtn'], startList[`${dataArr}-answer-two`]['boxBtn'])
-							diologRadios()
-							choiceOfAnswer('cleaning')
-							madalOpen()
-						}, 3000)
-						setTimeout(() => {
-							dialog(startList[`${dataArr}-two`]['name'], startList[`${dataArr}-two`]['text'], startList[`${dataArr}-two`]['class'])
-							diologRadios()
-						}, 4000)
-						setTimeout(() => {
-							dialog(startList[`${dataArr}-answer-three`]['name'], startList[`${dataArr}-answer-three`]['text'], startList[`${dataArr}-answer-three`]['class'], startList[`${dataArr}-answer-three`]['classTwo'], startList[`${dataArr}-answer-three`]['headBtn'], startList[`${dataArr}-answer-three`]['boxBtn'])
-							diologRadios()
-							choiceOfAnswer('cleaning')
-							madalOpen()
-						}, 5000)
+						dialog(startList[`${dataArr}-answer`]['name'], startList[`${dataArr}-answer`]['text'], startList[`${dataArr}-answer`]['class'], startList[`${dataArr}-answer`]['classTwo'], startList[`${dataArr}-answer`]['headBtn'], startList[`${dataArr}-answer`]['boxBtn'])
+
+						dialog(startList[dataArr]['name'], startList[dataArr]['text'], startList[dataArr]['class'])
+
+						dialog(startList[`${dataArr}-answer-two`]['name'], startList[`${dataArr}-answer-two`]['text'], startList[`${dataArr}-answer-two`]['class'], startList[`${dataArr}-answer-two`]['classTwo'], startList[`${dataArr}-answer-two`]['headBtn'], startList[`${dataArr}-answer-two`]['boxBtn'])
+
+						dialog(startList[`${dataArr}-two`]['name'], startList[`${dataArr}-two`]['text'], startList[`${dataArr}-two`]['class'])
+
+						dialog(startList[`${dataArr}-answer-three`]['name'], startList[`${dataArr}-answer-three`]['text'], startList[`${dataArr}-answer-three`]['class'], startList[`${dataArr}-answer-three`]['classTwo'], startList[`${dataArr}-answer-three`]['headBtn'], startList[`${dataArr}-answer-three`]['boxBtn'])
+						diologRadios()
+						choiceOfAnswer('cleaning')
+						madalOpen()
+						opacityNone()
 					}
 
 					else if (dataNumber == 4) {
 
-						setTimeout(() => {
-							dialog(startList[dataArr]['name'], startList[dataArr]['text'], startList[dataArr]['class'])
-							diologRadios()
-						}, 1000)
-						setTimeout(() => {
-							dialog(startList[`${dataArr}-answer`]['name'], startList[`${dataArr}-answer`]['text'], startList[`${dataArr}-answer`]['class'], startList[`${dataArr}-answer`]['classTwo'], startList[`${dataArr}-answer`]['headBtn'], startList[`${dataArr}-answer`]['boxBtn'])
-							diologRadios()
-						}, 2000)
-						setTimeout(() => {
-							dialog(startList[`${dataArr}-two`]['name'], startList[`${dataArr}-two`]['text'], startList[`${dataArr}-two`]['class'])
-							diologRadios()
-						}, 3000)
-						setTimeout(() => {
-							dialog(startList[`${dataArr}-answer-two`]['name'], startList[`${dataArr}-answer-two`]['text'], startList[`${dataArr}-answer-two`]['class'], startList[`${dataArr}-answer-two`]['classTwo'], startList[`${dataArr}-answer-two`]['headBtn'], startList[`${dataArr}-answer-two`]['boxBtn'])
-							diologRadios()
-							choiceOfAnswer('cleaning')
-							madalOpen()
-						}, 4000)
-					} else if (dataNumber == 3) {
-						setTimeout(() => {
-							dialog(startList[`${dataArr}-answer`]['name'], startList[`${dataArr}-answer`]['text'], startList[`${dataArr}-answer`]['class'], startList[`${dataArr}-answer`]['classTwo'], startList[`${dataArr}-answer`]['headBtn'], startList[`${dataArr}-answer`]['boxBtn'])
 
-							diologRadios()
-						}, 1000)
-						setTimeout(() => {
-							dialog(startList[dataArr]['name'], startList[dataArr]['text'], startList[dataArr]['class'])
-							diologRadios()
-						}, 2000)
-						setTimeout(() => {
-							dialog(startList[`${dataArr}-answer-1`]['name'], startList[`${dataArr}-answer-1`]['text'], startList[`${dataArr}-answer-1`]['class'], startList[`${dataArr}-answer-1`]['classTwo'], startList[`${dataArr}-answer-1`]['headBtn'], startList[`${dataArr}-answer-1`]['boxBtn'])
-							diologRadios()
-							choiceOfAnswer('cleaning')
-							madalOpen()
-						}, 3000)
+						dialog(startList[dataArr]['name'], startList[dataArr]['text'], startList[dataArr]['class'])
+
+						dialog(startList[`${dataArr}-answer`]['name'], startList[`${dataArr}-answer`]['text'], startList[`${dataArr}-answer`]['class'], startList[`${dataArr}-answer`]['classTwo'], startList[`${dataArr}-answer`]['headBtn'], startList[`${dataArr}-answer`]['boxBtn'])
+
+
+						dialog(startList[`${dataArr}-two`]['name'], startList[`${dataArr}-two`]['text'], startList[`${dataArr}-two`]['class'])
+
+						dialog(startList[`${dataArr}-answer-two`]['name'], startList[`${dataArr}-answer-two`]['text'], startList[`${dataArr}-answer-two`]['class'], startList[`${dataArr}-answer-two`]['classTwo'], startList[`${dataArr}-answer-two`]['headBtn'], startList[`${dataArr}-answer-two`]['boxBtn'])
+						diologRadios()
+						choiceOfAnswer('cleaning')
+						madalOpen()
+						opacityNone()
+					} else if (dataNumber == 3) {
+
+						dialog(startList[`${dataArr}-answer`]['name'], startList[`${dataArr}-answer`]['text'], startList[`${dataArr}-answer`]['class'], startList[`${dataArr}-answer`]['classTwo'], startList[`${dataArr}-answer`]['headBtn'], startList[`${dataArr}-answer`]['boxBtn'])
+
+
+						dialog(startList[dataArr]['name'], startList[dataArr]['text'], startList[dataArr]['class'])
+
+						dialog(startList[`${dataArr}-answer-1`]['name'], startList[`${dataArr}-answer-1`]['text'], startList[`${dataArr}-answer-1`]['class'], startList[`${dataArr}-answer-1`]['classTwo'], startList[`${dataArr}-answer-1`]['headBtn'], startList[`${dataArr}-answer-1`]['boxBtn'])
+						diologRadios()
+						choiceOfAnswer('cleaning')
+						madalOpen()
+						opacityNone()
 					} else if (dataNumber == 'call') {
 						let mainWrapp = document.querySelector('.main-wrapp');
 						mainWrapp.style.background = "url('../img/main/main-2.jpg')no-repeat top center";
@@ -1386,18 +1357,17 @@ $(function () {
 							diologRadios()
 							choiceOfAnswer('cleaning')
 							madalOpen()
+							opacityNone()
 						}, 3000)
 					} else if (dataNumber == 'finalGame') {
-						setTimeout(() => {
-							dialog(startList[dataArr]['name'], startList[dataArr]['text'], startList[dataArr]['class'])
-							diologRadios()
-						}, 1000)
-						setTimeout(() => {
-							dialog(startList[`${dataArr}-answer`]['name'], startList[`${dataArr}-answer`]['text'], startList[`${dataArr}-answer`]['class'], startList[`${dataArr}-answer`]['classTwo'], startList[`${dataArr}-answer`]['headBtn'], startList[`${dataArr}-answer`]['boxBtn'])
-							diologRadios()
-							choiceOfAnswer('cleaning')
-							madalOpen()
-						}, 2000)
+						dialog(startList[dataArr]['name'], startList[dataArr]['text'], startList[dataArr]['class'])
+
+
+						dialog(startList[`${dataArr}-answer`]['name'], startList[`${dataArr}-answer`]['text'], startList[`${dataArr}-answer`]['class'], startList[`${dataArr}-answer`]['classTwo'], startList[`${dataArr}-answer`]['headBtn'], startList[`${dataArr}-answer`]['boxBtn'])
+						diologRadios()
+						choiceOfAnswer('cleaning')
+						madalOpen()
+						opacityNone()
 						setTimeout(() => {
 							let chatBox = document.querySelector('.main-chat');
 							let elem = document.createElement("div");
@@ -1461,36 +1431,29 @@ $(function () {
 				} else if (dataChoice == dataArr) {
 					item.classList.add('active')
 					setTimeout(() => {
+						let blockDell = document.querySelectorAll('.push-error');
+						if (blockDell) {
+							blockDell.forEach(item => {
+								item.remove();
+							})
+						}
 						let back = document.querySelector('.tour-back');
 						back.classList.remove('--active');
 						chat.innerHTML = '';
-					}, 2000)
+					}, 1000)
 					setTimeout(() => {
 						dialog(startList[`${dataArr}-answer`]['name'], startList[`${dataArr}-answer`]['text'], startList[`${dataArr}-answer`]['class'], startList[`${dataArr}-answer`]['classTwo'], startList[`${dataArr}-answer`]['headBtn'], startList[`${dataArr}-answer`]['boxBtn'])
-						diologRadios()
-						madalOpen()
-					}, 3000)
-					setTimeout(() => {
 						dialog(startList[dataArr]['name'], startList[dataArr]['text'], startList[dataArr]['class'])
-						diologRadios()
-						madalOpen()
-					}, 4000)
-					setTimeout(() => {
 						dialog(startList[`${dataArr}-answer-two`]['name'], startList[`${dataArr}-answer-two`]['text'], startList[`${dataArr}-answer-two`]['class'], startList[`${dataArr}-answer-two`]['classTwo'], startList[`${dataArr}-answer-two`]['headBtn'], startList[`${dataArr}-answer-two`]['boxBtn'])
-						diologRadios()
-						madalOpen()
-					}, 5000)
-					setTimeout(() => {
 						dialog(startList[`${dataArr}-two`]['name'], startList[`${dataArr}-two`]['text'], startList[`${dataArr}-two`]['class'])
-						diologRadios()
-						madalOpen()
-					}, 6000)
-					setTimeout(() => {
 						dialog(startList[`${dataArr}-answer-three`]['name'], startList[`${dataArr}-answer-three`]['text'], startList[`${dataArr}-answer-three`]['class'], startList[`${dataArr}-answer-three`]['classTwo'], startList[`${dataArr}-answer-three`]['headBtn'], startList[`${dataArr}-answer-three`]['boxBtn'])
+
 						diologRadios()
 						choiceOfAnswer('cleaning')
 						madalOpen()
-					}, 7000)
+						opacityNone()
+					}, 2000)
+
 				}
 			})
 		})
@@ -1511,26 +1474,25 @@ $(function () {
 				} else if (dataChoice == dataArr) {
 					item.classList.add('active')
 					setTimeout(() => {
+						let blockDell = document.querySelectorAll('.push-error');
+						if (blockDell) {
+							blockDell.forEach(item => {
+								item.remove();
+							})
+						}
 						let back = document.querySelector('.excursion-back');
 						back.classList.remove('--active');
 						chat.innerHTML = '';
-					}, 2000)
+					}, 1000)
 					setTimeout(() => {
 						dialog(startList[`${dataArr}-answer`]['name'], startList[`${dataArr}-answer`]['text'], startList[`${dataArr}-answer`]['class'], startList[`${dataArr}-answer`]['classTwo'], startList[`${dataArr}-answer`]['headBtn'], startList[`${dataArr}-answer`]['boxBtn'])
-						diologRadios()
-						madalOpen()
-					}, 3000)
-					setTimeout(() => {
 						dialog(startList[dataArr]['name'], startList[dataArr]['text'], startList[dataArr]['class'])
-						diologRadios()
-						madalOpen()
-					}, 4000)
-					setTimeout(() => {
 						dialog(startList[`${dataArr}-answer-two`]['name'], startList[`${dataArr}-answer-two`]['text'], startList[`${dataArr}-answer-two`]['class'], startList[`${dataArr}-answer-two`]['classTwo'], startList[`${dataArr}-answer-two`]['headBtn'], startList[`${dataArr}-answer-two`]['boxBtn'])
 						diologRadios()
 						choiceOfAnswer('cleaning')
 						madalOpen()
-					}, 5000)
+						opacityNone()
+					}, 2000)
 
 				}
 			})
@@ -1552,26 +1514,28 @@ $(function () {
 				} else if (dataChoice == dataArr) {
 					item.classList.add('active')
 					setTimeout(() => {
+						let blockDell = document.querySelectorAll('.push-error');
+						if (blockDell) {
+							blockDell.forEach(item => {
+								item.remove();
+							})
+						}
 						let back = document.querySelector('.insurance-back');
 						back.classList.remove('--active');
 						chat.innerHTML = '';
-					}, 2000)
+					}, 1000)
 					setTimeout(() => {
 						dialog(startList[`${dataArr}-answer`]['name'], startList[`${dataArr}-answer`]['text'], startList[`${dataArr}-answer`]['class'], startList[`${dataArr}-answer`]['classTwo'], startList[`${dataArr}-answer`]['headBtn'], startList[`${dataArr}-answer`]['boxBtn'])
-						diologRadios()
-						madalOpen()
-					}, 3000)
-					setTimeout(() => {
 						dialog(startList[dataArr]['name'], startList[dataArr]['text'], startList[dataArr]['class'])
-						diologRadios()
-						madalOpen()
-					}, 4000)
-					setTimeout(() => {
 						dialog(startList[`${dataArr}-answer-two`]['name'], startList[`${dataArr}-answer-two`]['text'], startList[`${dataArr}-answer-two`]['class'], startList[`${dataArr}-answer-two`]['classTwo'], startList[`${dataArr}-answer-two`]['headBtn'], startList[`${dataArr}-answer-two`]['boxBtn'])
+
+
 						diologRadios()
 						choiceOfAnswer('cleaning')
 						madalOpen()
-					}, 5000)
+						opacityNone()
+					}, 2000)
+
 
 				}
 			})
@@ -1591,21 +1555,24 @@ $(function () {
 
 
 			setTimeout(() => {
+				let blockDell = document.querySelectorAll('.push-error');
+				if (blockDell) {
+					blockDell.forEach(item => {
+						item.remove();
+					})
+				}
 				corect.classList.remove('--active');
 				questionnaire.classList.remove('--active');
 				chat.innerHTML = '';
-			}, 2000)
+			}, 1000)
 			setTimeout(() => {
 				dialog(startList[dataArr]['name'], startList[dataArr]['text'], startList[dataArr]['class'])
-				diologRadios()
-				madalOpen()
-			}, 3000)
-			setTimeout(() => {
 				dialog(startList[`${dataArr}-answer`]['name'], startList[`${dataArr}-answer`]['text'], startList[`${dataArr}-answer`]['class'], startList[`${dataArr}-answer`]['classTwo'], startList[`${dataArr}-answer`]['headBtn'], startList[`${dataArr}-answer`]['boxBtn'])
 				diologRadios()
 				choiceOfAnswer('cleaning')
 				madalOpen()
-			}, 4000)
+				opacityNone()
+			}, 2000)
 
 		})
 	}
@@ -1651,6 +1618,7 @@ $(function () {
 		let elem = document.createElement("div");
 		elem.classList.add(`${classBox}`);
 		elem.classList.add(`${classBoxTwo}`);
+		elem.classList.add('opacity-none');
 		elem.innerHTML = `
 		<div class="${classBox}-name">
 						${name}
@@ -1662,8 +1630,23 @@ $(function () {
 					${boxBtn}	 `
 		chatBox.appendChild(elem);
 		buttonExplanation()
-	}
 
+	}
+	function opacityNone() {
+		let itemClass = document.querySelectorAll('.opacity-none');
+		let counter = 0;
+		let removeStart = setInterval(stepItem, 1000)
+		function stepItem() {
+			if (counter < itemClass.length) {
+				counter += 1;
+			} else if (counter == itemClass.length) {
+				clearInterval(removeStart)
+			}
+
+			itemClass[counter - 1].classList.remove('opacity-none')
+		}
+
+	}
 
 	function timer() {
 		let minut = 20;
@@ -1734,7 +1717,7 @@ $(function () {
 					})
 
 
-				}, 2000)
+				}, 3000)
 
 			})
 
@@ -1770,7 +1753,7 @@ $(function () {
 					})
 
 
-				}, 2000)
+				}, 3000)
 
 			})
 
@@ -1783,7 +1766,7 @@ $(function () {
 	// вызов ошибки
 	function buttonError(title, text) {
 
-		let mainWrappBox = document.querySelector('.main-wrapp-box');
+		let mainWrappBox = document.querySelector('.main-error-box');
 		let element = document.createElement("div");
 		element.classList.add('push-error');
 		element.innerHTML = `
@@ -1800,11 +1783,24 @@ $(function () {
 			</div>
 			`
 		mainWrappBox.appendChild(element);
-		setTimeout(() => {
-			let blockDell = document.querySelectorAll('.push-error');
-			blockDell.forEach(item => {
-				item.remove();
-			})
-		}, 2000)
+		deletError()
+
+	}
+
+	// удаление сообщения об ошибке
+	function deletError() {
+		let itemClass = document.querySelectorAll('.push-error');
+		let counter = 0;
+		let removeStart = setInterval(stepItem, 3000)
+		function stepItem() {
+			if (counter < itemClass.length) {
+				counter += 1;
+			} else if (counter == itemClass.length) {
+				clearInterval(removeStart)
+			}
+
+			itemClass[counter - 1].remove();
+		}
+
 	}
 })
